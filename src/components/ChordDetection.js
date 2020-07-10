@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { Button, Input, Typography, Divider, Container } from '@material-ui/core';
 import sharp11 from 'sharp11';
 
 export default function ChordDetection(props) {
@@ -20,7 +19,8 @@ export default function ChordDetection(props) {
   }
 
 
-  const handleClick = (e) => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     // check if no notes provided
     if (notes === '') throwError('Please enter notes before submitting');
     //TODO: validate inputs only # & b allowed next to characters
@@ -56,22 +56,42 @@ export default function ChordDetection(props) {
   }
   // TODO: wrap in form so user can hit enter instead of having to click button
   return (
-    <Container>
-      {error.show && <Typography paragraph={true}>{error.message}</Typography>}
-      <Typography paragraph={true}>Enter each note separated by a space</Typography>
-      <Typography variant="h2">{showChord}</Typography>
-      <Input type="text" value={notes} placeholder="C Eb G" onChange={e => setNotes(e.target.value)} />
-      <Button variant="contained" color="primary" onClick={handleClick}>Get Chord</Button>
-      {chords.length > 0 && <Typography paragraph={true}>Chord History</Typography>}
-      {chords.length > 0 && chords.map(chordObj => {
-        return (<div>
-          <Typography variant="h3" style={{ display: 'inline-block', paddingRight: '6px' }}>{chordObj.chordName}</Typography>
-          {chordObj.notes.map(note => <Typography style={{ display: 'inline-block', paddingRight: '6px' }} paragraph={true}>{note}</Typography>)}
-        </div>)
-      })
-      }
-      <Divider />
+    <div className="mx-10">
+      <div className=" mt-4">
+        <h4 className="text-2xl font-semibold">Chord Detection</h4>
+        <p className="text-sm">Find out what chord is being played by stringing together the individual notes (disregard duplicate notes).</p>
+      </div>
 
-    </Container>
+      <div class="w-full max-w-xs mt-4">
+        <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" onSubmit={handleSubmit}>
+          <div class="mb-4">
+            <h2>{showChord}</h2>
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="username">Notes of the chord</label>
+            <div class="flex items-center border-b border-b-2 border-teal-500 py-2 mr-2">
+              <input type="text" value={notes} placeholder="C Eb G" onChange={e => setNotes(e.target.value)} />
+            </div>
+            <p class="text-red-500 text-xs italic">separate each note with a space</p>
+          </div>
+          <div class="flex items-center justify-between">
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:outline-none" type="submit">Get Chord</button>
+          </div>
+        </form>
+        {error.show && <p>{error.message}</p>}
+      </div>
+
+      <div>
+
+        <div >
+          {chords.length > 0 && <h3 className="text-xl font-semibold">Chord History</h3>}
+          {chords.length > 0 && chords.map(chordObj => {
+            return (<div className="flex flex-row justify-between items-end">
+              <h3 className="font-bold text-2xl">{chordObj.chordName}</h3>
+              <div>{chordObj.notes.map(note => <p className="inline-block text-lg font-bold pr-1">{note}</p>)}</div>
+            </div>)
+          })
+          }
+        </div>
+      </div>
+    </div>
   )
 }

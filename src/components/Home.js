@@ -1,65 +1,37 @@
 import React from 'react'
-import { Button, Grid, Card, CardContent, Typography, CardActions, makeStyles } from '@material-ui/core'
 import { Link } from 'react-router-dom'
 
-const useStyles = makeStyles({
-  root: {
-    minWidth: 275,
-  },
-  bullet: {
-    display: 'inline-block',
-    margin: '0 2px',
-    transform: 'scale(0.8)',
-  },
-  title: {
-    fontSize: 14,
-  },
-  pos: {
-    marginBottom: 12,
-  },
-});
-
-function Home(props) {
-  const classes = useStyles();
+function Home() {
   return (
-    <Grid container direction="row" alignItems="stretch">
-      <Grid item sm={12} md={4}>
-        <Card className={classes.root}>
-          <CardContent>
-            <Typography variant="h4">
-              Scales
-            </Typography>
-            <Typography variant="body2" component="p">
-              Find any scale for any note.
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Link style={{ color: 'white' }} to="/scales">
-              <Button color="primary" variant="contained">Go</Button>
+    <div className="px-8">
+      <div className="px-4 py-6 my-4 rounded-lg shadow-xl">
+        <h2 className="text-3xl font-semibold">Scales</h2>
+        <div style={{ height: '1px' }} className="w-full bg-black"></div>
+        <div className="pt-2">
+          <p className="pb-2">Find any scale for any note.</p>
+          <div className="flex flex-row justify-start">
+            <Link to="/scales" className="mr-2 py-2 px-4 bg-blue-500 rounded-md text-sm">
+              <button className="font-bold text-white" >Take me there</button>
             </Link>
-            <Button size="small">Learn More</Button>
-          </CardActions>
-        </Card>
-      </Grid>
-      <Grid item sm={12} md={4}>
-        <Card className={classes.root}>
-          <CardContent>
-            <Typography variant="h4">
-              Chord Detection
-            </Typography>
-            <Typography variant="body2" component="p">
-              Find out what chord you are playing by it's individual notes.
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Link style={{ color: 'white' }} to="/chordDetection">
-              <Button color="primary" variant="contained">Go</Button>
+            <button className="py-2 px-4 bg-gray-800 rounded-md text-white text-sm font-bold">Learn More</button>
+          </div>
+        </div>
+      </div>
+
+      <div className="px-4 py-6 my-4 rounded-lg shadow-xl">
+        <h2 className="text-3xl font-semibold">Chord Detection</h2>
+        <div style={{ height: '1px' }} className="w-full bg-black"></div>
+        <div className="pt-2">
+          <p className="pb-2">Find out what chord you are playing by it's individual notes.</p>
+          <div className="flex flex-row justify-start">
+            <Link to="/chordDetection" className="mr-2 py-2 px-4 bg-blue-500 rounded-md text-sm font-bold">
+              <button className="font-bold text-white">Take me there</button>
             </Link>
-            <Button size="small">Learn More</Button>
-          </CardActions>
-        </Card>
-      </Grid>
-    </Grid>
+            <button className="py-2 px-4 bg-gray-800 rounded-md text-white text-sm font-bold">Learn More</button>
+          </div>
+        </div>
+      </div>
+    </div>
   )
 }
 
