@@ -9,7 +9,7 @@ export default function ChordDetection(props) {
   const [chords, setChords] = useState([]);
   // show chord once user submits
   const [showChord, setShowChord] = useState('');
-  const [scales, setScales] = useState(null);
+  // const [scales, setScales] = useState(null);
 
   const throwError = (message) => {
     setError({ message: message, show: true });
