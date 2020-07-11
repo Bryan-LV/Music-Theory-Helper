@@ -62,18 +62,18 @@ export default function ChordDetection(props) {
         <p className="text-sm">Find out what chord is being played by stringing together the individual notes (disregard duplicate notes).</p>
       </div>
 
-      <div class="w-full max-w-xs mt-4">
-        <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" onSubmit={handleSubmit}>
-          <div class="mb-4">
+      <div className="w-full max-w-xs mt-4">
+        <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" onSubmit={handleSubmit}>
+          <div className="mb-4">
             <h2>{showChord}</h2>
-            <label class="block text-gray-700 text-sm font-bold mb-2" for="username">Notes of the chord</label>
-            <div class="flex items-center border-b border-b-2 border-teal-500 py-2 mr-2">
-              <input type="text" value={notes} placeholder="C Eb G" onChange={e => setNotes(e.target.value)} />
+            <label className="block text-gray-700 text-sm font-bold mb-2" for="username">Notes of the chord</label>
+            <div className="flex items-center border-b border-b-2 border-teal-500 py-2 mr-2">
+              <input className="outline-none" type="text" value={notes} placeholder="C Eb G" onChange={e => setNotes(e.target.value)} />
             </div>
-            <p class="text-red-500 text-xs italic">separate each note with a space</p>
+            <p className="text-red-500 text-xs italic">separate each note with a space</p>
           </div>
-          <div class="flex items-center justify-between">
-            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:outline-none" type="submit">Get Chord</button>
+          <div className="flex items-center justify-between">
+            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit">Get Chord</button>
           </div>
         </form>
         {error.show && <p>{error.message}</p>}
