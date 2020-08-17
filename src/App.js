@@ -1,32 +1,48 @@
-import React from 'react'
-import ChordDetection from './components/ChordDetection'
-import Scales from './components/Scales'
-import Home from './components/Home'
-import Navbar from './components/layout/Navbar'
+import React, { useState } from 'react'
 import { Switch, Route } from 'react-router-dom'
+import { Home, Readings, Theory, Tools } from './components/pages/index'
+import Navbar from './components/layout/Navbar'
+import { ChordDetection, Scales, ChordTypes } from './components/tool-components';
 
 import './styles/App.css';
-import Resources from './components/Resources'
 
 
 function App() {
+  const [selectedTool, setTool] = useState('');
+
   return (
     <div className="App">
       <Navbar />
       <div>
         <Switch>
           <Route exact path="/">
-            <Home />
+            <Home setTool={setTool} />
           </Route>
-          <Route exact path="/resources">
-            <Resources />
+
+          <Route exact path="/readings">
+            <Readings />
           </Route>
-          <Route exact path="/scales">
-            <Scales />
+
+          <Route exact path="/theory">
+            <Theory />
           </Route>
-          <Route exact path="/chordDetection">
+
+          <Route exact path="/tools">
+            <Tools setTool={setTool} />
+          </Route>
+
+          <Route exact path="/tools/chord-detection">
             <ChordDetection />
           </Route>
+
+          <Route exact path="/tools/scales">
+            <Scales />
+          </Route>
+
+          <Route exact path="/tools/chord-types">
+            <ChordTypes />
+          </Route>
+
         </Switch>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import sharp11 from 'sharp11';
 
-import supportedScales from '../utils/scales'
+import supportedScales from '../../utils/scales'
 
 function Scales(props) {
   const [key, setKey] = useState('');
@@ -20,8 +20,12 @@ function Scales(props) {
   }
 
   return (
-    <div className="mx-10">
-      <div class="w-full max-w-xs">
+    <div className="mx-8">
+      <div className="max-w-xl  py-4 text-center m-auto">
+        <h2 className="text-6xl lg:text font-semibold">Scales</h2>
+        <h3 className="pb-3">Scales are just a pattern of intervals that sound nice together. An interval is just the distance between two notes. Each interval has it's own scale degree, which is just a fancy way of saying that each note has a number in the scale</h3>
+      </div>
+      <div class="w-full max-w-lg m-auto">
         <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" onSubmit={handleSubmit}>
           <div class="mb-4">
             <label class="block text-gray-700 text-sm font-bold mb-2" for="username">Root Note</label>
@@ -45,13 +49,12 @@ function Scales(props) {
         </form>
       </div>
 
-      <div>
-        {showScale ? (
-          <div>
-            {showScale.map(note => <p>{note.name}</p>)}
-          </div>
-        ) : null}
-      </div>
+
+      {showScale ? (
+        <div className="flex flex-row">
+          {showScale.map(note => <p className="text-3xl px-2">{note.name}</p>)}
+        </div>
+      ) : null}
 
 
     </div>

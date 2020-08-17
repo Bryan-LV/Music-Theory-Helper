@@ -57,12 +57,12 @@ export default function ChordDetection(props) {
   // TODO: wrap in form so user can hit enter instead of having to click button
   return (
     <div className="mx-10">
-      <div className=" mt-4">
-        <h4 className="text-2xl font-semibold">Chord Detection</h4>
-        <p className="text-sm">Find out what chord is being played by stringing together the individual notes (disregard duplicate notes).</p>
+      <div className=" mt-4 text-center">
+        <h4 className="text-6xl font-semibold">Chord Detection</h4>
+        <p className="pb-3">Find out what chord you're played by stringing together the individual notes (disregard duplicate notes).</p>
       </div>
 
-      <div className="w-full max-w-xs mt-4">
+      <div className="w-full max-w-md mt-4 m-auto">
         <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" onSubmit={handleSubmit}>
           <div className="mb-4">
             <h2>{showChord}</h2>
