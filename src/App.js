@@ -1,34 +1,19 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Switch, Route } from 'react-router-dom'
-import { Home, Readings, Theory, Tools } from './components/pages/index'
-import Navbar from './components/layout/Navbar'
+import { Home } from './components/pages/index'
 import { ChordDetection, Scales, ChordTypes } from './components/tool-components';
 
 import './styles/App.css';
 
 
 function App() {
-  const [selectedTool, setTool] = useState('');
 
   return (
     <div className="App">
-      {/* <Navbar /> */}
       <div>
         <Switch>
           <Route exact path="/">
-            <Home setTool={setTool} />
-          </Route>
-
-          <Route exact path="/readings">
-            <Readings />
-          </Route>
-
-          <Route exact path="/theory">
-            <Theory />
-          </Route>
-
-          <Route exact path="/tools">
-            <Tools setTool={setTool} />
+            <Home />
           </Route>
 
           <Route exact path="/tools/chord-detection">

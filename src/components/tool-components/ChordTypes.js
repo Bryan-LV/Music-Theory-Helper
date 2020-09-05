@@ -1,5 +1,4 @@
 import React from 'react'
-import sharp11 from 'sharp11'
 import chordGraph from '../../assets/media/chord-shapes.gif'
 
 function ChordTypes({ note = 'c' }) {
