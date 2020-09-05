@@ -13,8 +13,8 @@ export default function Navbar() {
       </div>
       <div className="">
         <NavLink to="/" className="text-lg font-semibold mx-4">Home</NavLink>
-        <NavLink to="/readings" className="text-lg font-semibold mx-4">Readings</NavLink>
-        <NavLink to="/tools" className="text-lg font-semibold mx-4">Tools</NavLink>
+        {/* <NavLink to="/readings" className="text-lg font-semibold mx-4">Readings</NavLink> */}
+        {/* <NavLink to="/tools" className="text-lg font-semibold mx-4">Tools</NavLink> */}
       </div>
     </div >
   );

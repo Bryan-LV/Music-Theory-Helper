@@ -4,18 +4,17 @@ import data from '../../data'
 
 function Home() {
   return (
-    <div className="px-8 ">
-      <div className="py-16 lg:pl-24">
-        <p className="tracking-widest">MUSICWIZARD</p>
-        <h2 className="font-semibold text-4xl py-2 leading-tight md:text-5xl">Learning Music Theory <br />Shouldn't Be So Hard...</h2>
+    <div className="px-4 md:px-8">
+      <div className="relative h-full py-10 ">
 
-        <div className="flex flex-row justify-start items-baseline max-w-screen-xl">
-          <div style={{ height: '3px', width: '150px' }} className="bg-gray-700 hidden md:block"></div>
-          <p className="text-gray-700 text-xl leading-base py-4 md:w-3/4 max-w-xl md:pl-4">Music Wizard was created as a supplement learning resource for people
-          who are learn music theory. Here you can find learning tools to help you create and better understand the concepts.</p>
+        <div className="lg:pl-10 w-full max-w-screen-md relative z-10">
+          <p className="tracking-widest">MUSICWIZARD</p>
+          <h2 className="font-semibold py-2 leading-tight text-4xl">Learning Music Theory <br />Shouldn't Be So Hard...</h2>
+          <div className="flex flex-row justify-start items-baseline max-w-screen-xl">
+            <div className="bg-gray-700 hidden md:block"></div>
+            <p className="text-gray-700 text-xl leading-base py-4">Music Wizard was created as a supplement learning resource for people who are learn music theory. Here you can find learning tools to help you create and better understand the concepts.</p>
+          </div>
         </div>
-
-        <button className="py-3 px-10 bg-gray-400 rounded-md mt-4 text-xl font-semibold">Get Started</button>
       </div>
 
       <div className="lg:flex lg:flex-row lg:justify-start lg:items-baseline lg:items-stretch">
