@@ -6,7 +6,7 @@ const data = [
     btnText: 'Take me there'
   },
   {
-    title: 'Unravel The Chord',
+    title: 'Chords',
     desc: 'Find out what chord you are playing by entering the individual notes',
     linkText: '/chord-detection',
     btnText: 'Take me there'

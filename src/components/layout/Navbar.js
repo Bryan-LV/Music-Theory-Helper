@@ -1,20 +1,25 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import wizardLogo from '../../assets/media/wizard.svg'
+import Logo from './Logo';
 
 export default function Navbar() {
 
   return (
-    <div className="mx-10 mt-4 flex justify-between align-baseline items-center">
+    <div className="mx-10 my-4 flex justify-between align-baseline items-center rounded-b-md">
       <div className="w-12 h-12">
-        <Link to="/">
-          <img className="" src={wizardLogo} alt="logo" />
-        </Link>
+        <Logo />
       </div>
-      <div className="">
-        <NavLink to="/" className="text-lg font-semibold mx-4">Home</NavLink>
-        {/* <NavLink to="/readings" className="text-lg font-semibold mx-4">Readings</NavLink> */}
-        {/* <NavLink to="/tools" className="text-lg font-semibold mx-4">Tools</NavLink> */}
+
+      <div className="md:hidden">
+        <div className="w-10 border border-black"></div>
+        <div style={{ marginTop: '5px' }} className="w-10 border border-black ml-2"></div>
+        <div style={{ marginTop: '5px' }} className="w-10 border border-black ml-4"></div>
+      </div>
+
+      <div className="hidden md:block">
+        <NavLink to="/" className="text-lg mx-4">Home</NavLink>
+        <NavLink to="/tools" className="text-lg mx-4">Tools</NavLink>
+        <NavLink to="/readings" className="text-lg mx-4">Resources</NavLink>
       </div>
     </div >
   );

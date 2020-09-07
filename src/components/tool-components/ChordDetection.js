@@ -56,16 +56,16 @@ export default function ChordDetection(props) {
   }
   // TODO: wrap in form so user can hit enter instead of having to click button
   return (
-    <div className="mx-10">
+    <div className="px-10 py-8 dark-blue h-screen">
       <div className=" mt-4 text-center">
-        <h4 className="text-6xl font-semibold">Chord Detection</h4>
-        <p className="pb-3">Find out what chord you're played by stringing together the individual notes (disregard duplicate notes).</p>
+        <h4 className="text-6xl font-semibold text-white leading-none pb-2">Chord Detection</h4>
+        <p className="pb-3 text-white">Find out what chord you're played by stringing together the individual notes (disregard duplicate notes).</p>
       </div>
 
       <div className="w-full max-w-md mt-4 m-auto">
         <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" onSubmit={handleSubmit}>
           <div className="mb-4">
-            <h2>{showChord}</h2>
+            <h2 className="text-4xl">{showChord}</h2>
             <label className="block text-gray-700 text-sm font-bold mb-2" for="username">Notes of the chord</label>
             <div className="flex items-center border-b border-b-2 border-teal-500 py-2 mr-2">
               <input className="outline-none" type="text" value={notes} placeholder="C Eb G" onChange={e => setNotes(e.target.value)} />
@@ -81,12 +81,12 @@ export default function ChordDetection(props) {
 
       <div>
 
-        <div >
-          {chords.length > 0 && <h3 className="text-xl font-semibold">Chord History</h3>}
+        <div>
+          {chords.length > 0 && <h3 className="text-xl font-semibold text-white">Chord History</h3>}
           {chords.length > 0 && chords.map(chordObj => {
             return (<div className="flex flex-row justify-between items-end">
-              <h3 className="font-bold text-2xl">{chordObj.chordName}</h3>
-              <div>{chordObj.notes.map(note => <p className="inline-block text-lg font-bold pr-1">{note}</p>)}</div>
+              <h3 className="font-bold text-2xl text-white">{chordObj.chordName}</h3>
+              <div>{chordObj.notes.map(note => <p className="inline-block text-lg text-white font-bold pr-1">{note}</p>)}</div>
             </div>)
           })
           }

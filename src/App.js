@@ -4,12 +4,14 @@ import { Home } from './components/pages/index'
 import { ChordDetection, Scales, ChordTypes } from './components/tool-components';
 
 import './styles/App.css';
+import Navbar from './components/layout/Navbar';
 
 
 function App() {
 
   return (
     <div className="App">
+      <Navbar />
       <div>
         <Switch>
           <Route exact path="/">
